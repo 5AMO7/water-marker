@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" integrity="sha256-6H5VB5QyLldKH9oMFUmjxw2uWpPZETQXpCkBaDjquMs=" crossorigin="anonymous"></script>
+    
+    <title>waterMarker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="disableOptions()">
+    <div class="circle purple-circle"></div>
+    <div class="circle blueish-circle"></div>
+    <main>
+        <div class="container-top-part">
+            <div class="image-layer">
+                <div class="image-grid">
+                    <div class="grid-item left top-corner"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item right top-corner"></div>
+                    <div class="grid-item left"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item right"></div>
+                    <div class="grid-item left btm-corner"></div>
+                    <div class="grid-item "></div>
+                    <div class="grid-item right btm-corner"></div>
+                </div>
+            </div>
+            <div class="image-placeholder">
+                <div>CHOOSE AN IMAGE TO GET STARTED</div>
+            </div>
+        </div>
+        <div class="container-bottom-part">
+            <input type="file" class="select-file" accept="image/*" hidden>
+            <button class="choose-img-btn">Choose an image</button>
+
+            <input type="text" name="wm-text" id="wm-text" placeholder="Watermark text goes here" onKeyPress="updateWatermark()" onKeyUp="updateWatermark()">
+            
+            <button class="change-pos-btn"><i class="bi bi-arrows-move"></i></button>
+
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <i class="bi bi-bounding-box" style="font-size: 2rem;"></i>
+                    <input type="range" name="img-scaling" id="img-scaling" class="slider" value="10" min="0" max="100" aria-valuemax="50">
+                </div>
+                
+                <div class="slider-wrapper">
+                    <i class="bi bi-eye" style="font-size: 2rem;"></i>
+                    <input type="range" name="wm-opacity" id="wm-opacity" class="slider" value="50" min="0" max="100">
+                </div>
+            </div>
+
+            <button class="save-img-btn">Save the image</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
